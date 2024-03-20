@@ -18,4 +18,4 @@ export default function GlobalError({ error, reset }: ErrorProps){
     <button onClick={reset} className={styles.Error__button}>Volver a intentar</button>
    </main>
   )
-}
+}  
