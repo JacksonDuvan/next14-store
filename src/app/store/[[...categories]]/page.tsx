@@ -1,4 +1,5 @@
-'use client'
+import { ProductsWrapper } from "app/components/Store/ProductsWrapper";
+import { getProducts } from "app/services/shopify/products";
 
 interface CategoryProps {
   params: {
@@ -7,11 +8,13 @@ interface CategoryProps {
   searchParams?: {}
 }
 
-export default function Category(props: CategoryProps) {
+export default async function Category(props: CategoryProps) {
+  const { products } = await getProducts()
+ 
   const { rssreferer } = props.searchParams as { rssreferer?: string };
   const { categories } = props.params
   
   return  (
-    <h1>Category dynamic: {categories}</h1>
+   <ProductsWrapper products={products}/>
   )
 }
