@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from './MainProducts.module.sass'
-import { getProducts } from "app/services/shopify"
+import { getProducts } from "app/services/shopify/products"
 
 export const MainProducts = async () => {
   const response = await fetch('http://localhost:3000/api')
