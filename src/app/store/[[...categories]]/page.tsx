@@ -20,8 +20,7 @@ export default async function Category(props: CategoryProps) {
   if(selectedCollectionId){
     products = await getCollectionsProducts(selectedCollectionId)
   } else {
-    const response = await getProducts()
-    products = response.products
+    products = await getProducts()
   }
 
   return  (
