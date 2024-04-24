@@ -10,9 +10,7 @@ export const NewAccountForm = () => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault()
-    console.log('event.target >>',event.target);
     const formData = new FormData(event.target)
-    console.log('formData >>',formData);
     await handleCreateUser(formData)
   }
 
