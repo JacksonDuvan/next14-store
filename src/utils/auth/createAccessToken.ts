@@ -30,4 +30,6 @@ export const createAccessToken = async (email: string, password: string) => {
       sameSite: "strict"
     })
   }
+
+  return accessToken
 }
