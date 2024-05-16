@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 export const config = {
   matcher: [
     '/login/:path',
-    '/signup:path'
+    '/signup/:path'
   ]
 }
 
