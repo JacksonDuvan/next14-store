@@ -1,23 +1,28 @@
-/** @type {import('next').NextConfig} */
-import path from 'path'
 import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import withBundleAnalyzer from '@next/bundle-analyzer';
+/** @type {import('next').NextConfig} */
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
+
+const bundleAnalyzer = withBundleAnalyzer({
+	enabled: process.env.ANALYZE === 'true',
+})
 
 const nextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'src/sass')],
-    prependData: `@import "main.sass"`
+    includePaths: [join(__dirname, 'src/sass')],
+    prependData: `@import "main.sass"`,
   },
-  images: {
-    remotePatterns: [
+  images:{
+    remotePatterns:[
       {
-        hostname: 'cdn.shopify.com',
-        protocol: 'https'
+        hostname:'cdn.shopify.com',
+        protocol:'https'
       }
     ]
   }
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);
