@@ -23,3 +23,18 @@ type CartItem = {
   image: string;
   merchandiseId: string;
 }
+
+interface Metadata {
+  title: {
+    default: string,
+    template: string, // My-organization | Taskiflow
+  },
+  description: string,
+  keywords: string[],
+  icons: [
+    {
+      url: string,
+      href: string,
+    },
+  ],
+}

@@ -1,7 +1,7 @@
 
 import { MainProducts } from "app/components/home/MainProducts";
 
-export const siteConfig = {
+const siteConfig = {
   name: 'XTAL',
   description: 'A futuristic web store for all your needs',
 }
